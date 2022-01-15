@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import CalTemplate from './components/CalTemplate';
+import CalButton from './components/CalButton';
+import CalPannel from './components/CalPannel';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+    state = {
+        input : ''
+    }
+
+    getDataFromChild = (data) => {
+        this.setState({
+            input: this.state.input + data
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                <CalTemplate  cButton= {<CalButton getDataFromChild= {this.getDataFromChild}/>}
+                            cPannel = {<CalPannel calInput = {this.state.input}/>}
+                        >
+
+
+                </CalTemplate>
+            </div>
+            
+        );
+    }
 }
 
 export default App;
