@@ -21,7 +21,6 @@ class CalButton extends Component {
                 <button onClick={this.onBtnClick} value="+">+</button>
                 <button onClick={this.onBtnClick} value="0">0</button>
                 <button onClick={this.onBtnClick} value="-">-</button>
-                <button  value="=">=</button>
             </div>
         );
     }
