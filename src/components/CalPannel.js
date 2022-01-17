@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class CalPannel extends Component {
-    render() {
-        return (
-            <h1>
-                {this.props.calInput}
-            </h1>
-        );
-    }
-}
+const CalPannel = ({calInput}) => {
+    return (
+        <div>
+            {calInput}
+        </div>
+    );
+};
 
 export default CalPannel;
