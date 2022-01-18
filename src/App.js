@@ -3,6 +3,13 @@ import CalTemplate from './components/CalTemplate';
 import CalButton from './components/CalButton';
 import CalPannel from './components/CalPannel';
 import CalResultView from './components/CalResultView';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: #e9ecef;
+  }
+`;
 
 const App = () => {
     const [ inputs, setInputs ] = useState({
@@ -23,6 +30,7 @@ const App = () => {
 
     return (
         <div>
+            <GlobalStyle/>
             <CalTemplate  cButton= {<CalButton getDataFromChild= {getDataFromChild}/>}
                             cPannel = {<CalPannel calInput = {input}/>}>
                 <CalResultView inputData = {input}></CalResultView>
