@@ -1,16 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const BtnStyled = styled.div`
-  width: 512px;
-  height: 508px;
+const BtnDivStyled = styled.div`
+    text-align: center;
+    margin-top: 17px;
+`;
 
-  position: relative; /* 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
-  background: white;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
+const BtnStyled = styled.button`
+  font-size: 30px;
+  margin: 7px;
+  padding: 17.5px 48px;
+  background : #E8E8E9;
+  border: 2px  ;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
 
-
-
+  &:hover {
+    background-color: #F47378;
+  }
 `;
 const CalButton = ({getDataFromChild}) => {
     const btnNumber = ["1","2","3","4","5","6","7","8","9","+","0","-"]
@@ -20,11 +28,11 @@ const CalButton = ({getDataFromChild}) => {
     }
 
     return (
-        <BtnStyled>
+        <BtnDivStyled>
             {
-                btnNumber.map( btnNum => (<button onClick={onBtnClick} value={btnNum} key={btnNum}>{btnNum}</button>))
+                btnNumber.map( btnNum => (<BtnStyled onClick={onBtnClick} value={btnNum} key={btnNum}>{btnNum}</BtnStyled>))
             }
-        </BtnStyled>
+        </BtnDivStyled>
     );
 };
 
