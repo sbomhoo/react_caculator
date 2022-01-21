@@ -28,12 +28,20 @@ const App = () => {
         }
     }
 
+    const inintCalResult = (data) => {
+        if(data){
+            setInputs({
+                input: ''
+            })
+        }
+    }
+
     return (
         <div>
             <GlobalStyle/>
             <CalTemplate  cButton= {<CalButton getDataFromChild= {getDataFromChild}/>}
                             cPannel = {<CalPannel calInput = {input}/>}>
-                <CalResultView inputData = {input}></CalResultView>
+                <CalResultView inputData = {input} inintCalResult= {inintCalResult}></CalResultView>
             </CalTemplate>
         </div>
     );
